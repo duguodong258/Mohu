@@ -1,22 +1,21 @@
-package com.xianrou.mohu.base;
+package com.xianrou.mohu.activity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import com.xianrou.mohu.R;
+import com.xianrou.mohu.base.BaseActivity;
 
 /**
  * @author 咸鱼
- * @date 2017/1/13
+ * @date 2017/1/14 0014
  * @des ${TODO}
  */
 
-public class BaseActivity extends AppCompatActivity {
-    protected Context mContext;
-
+public class PublishActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContext = this;
+        setContentView(R.layout.activity_publish);
     }
 }

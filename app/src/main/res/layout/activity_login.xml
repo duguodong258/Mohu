@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/style_widthM_heightM">
 
     <RelativeLayout
         android:padding="5dp"
@@ -23,13 +23,17 @@
             android:layout_height="match_parent" />
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/head"
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/user_avator"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
+        android:layout_height="100dp"
         android:layout_width="100dp"
-        android:src="@drawable/head"
-        android:layout_height="100dp" />
+        fresco:roundAsCircle="false"
+        fresco:roundedCornerRadius="10dp"
+        fresco:placeholderImage="@drawable/head"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:failureImage="@drawable/head"/>
 
     <EditText
         android:gravity="center"
@@ -54,6 +58,7 @@
         android:layout_height="50dp" />
 
 
+    <!--第三方登录-->
     <LinearLayout
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
@@ -61,9 +66,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <View
-            android:background="#763232"
+            android:background="#bfbebe"
             android:layout_width="120dp"
-            android:layout_height="1dp"/>
+            android:layout_height="0.5dp"/>
         <TextView
             android:text="第三方登录"
             android:layout_marginLeft="5dp"
@@ -71,27 +76,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <View
-            android:background="#763232"
+            android:background="#bfbebe"
             android:layout_width="120dp"
-            android:layout_height="1dp"/>
+            android:layout_height="0.5dp"/>
     </LinearLayout>
-
+    
     <LinearLayout
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <ImageView
+            android:id="@+id/iv_login_qq"
             android:src="@drawable/icon_def_qq"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/iv_login_wx"
             android:src="@drawable/icon_def_wx"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
+
         <ImageView
+            android:id="@+id/iv_login_xl"
             android:src="@drawable/icon_def_xl"
             android:layout_width="0dp"
             android:layout_weight="1"
