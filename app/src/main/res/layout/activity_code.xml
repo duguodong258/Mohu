@@ -10,4 +10,18 @@
         android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <com.xianrou.mohu.widget.TabPageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+    </android.support.v4.view.ViewPager>
 </LinearLayout>

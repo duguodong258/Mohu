@@ -51,4 +51,28 @@
         <item name="android:layout_height">0.5dp</item>
         <item name="android:background">@color/line_color</item>
     </style>
+
+    <style name="edit_rl_style">
+        <item name="android:background">@color/white</item>
+        <item name="android:padding">@dimen/Spacing_10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/Spacing_50dp</item>
+    </style>
+
+    <style name="edit_tv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/edit_tvColor</item>
+        <item name="android:textSize">@dimen/fontSize_16sp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="edit_tv1_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/edit_tvColorHint</item>
+        <item name="android:textSize">@dimen/fontSize_16sp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/Spacing_5dp</item>
+    </style>
 </resources>

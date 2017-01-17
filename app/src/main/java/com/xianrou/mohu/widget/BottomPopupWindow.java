@@ -2,6 +2,7 @@ package com.xianrou.mohu.widget;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.PopupWindow;
 
 import com.xianrou.mohu.R;
@@ -19,19 +21,30 @@ import com.xianrou.mohu.R;
  * @des 点击发布的弹窗
  */
 
-public class PublishPopupWindow extends PopupWindow {
+public class BottomPopupWindow extends PopupWindow {
 
     private final int DURATION = 300;
-    private final View popupView;//pop的布局
+    private final View popupView;//popup的布局
+    private final Button mFirstBtn;
+    private final Button mSecondBtn;
 
     //构造器传入一个点击监听器
-    public PublishPopupWindow(Context context, View.OnClickListener clickListener) {
+    public BottomPopupWindow(Context context, View.OnClickListener clickListener) {
         super(context);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         popupView = inflater.inflate(R.layout.popup_publish, null);
-        popupView.findViewById(R.id.btn_publishPhoto).setOnClickListener(clickListener);
-        popupView.findViewById(R.id.btn_publishVideo).setOnClickListener(clickListener);
-        popupView.findViewById(R.id.btn_cancel).setOnClickListener(clickListener);
+        mFirstBtn = (Button) popupView.findViewById(R.id.btn_firstItem);
+        mSecondBtn = (Button) popupView.findViewById(R.id.btn_secondItem);
+
+        mFirstBtn.setOnClickListener(clickListener);
+        mSecondBtn.setOnClickListener(clickListener);
+        popupView.findViewById(R.id.btn_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
+            }
+        });
+
         this.setContentView(popupView);
         this.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
         this.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
@@ -97,5 +110,19 @@ public class PublishPopupWindow extends PopupWindow {
             ta.setFillEnabled(true);
         }
         return ta;
+    }
+
+    //设置第一个item名字
+    public void setFirstItemName(String name){
+        if(!TextUtils.isEmpty(name)){
+            mFirstBtn.setText(name);
+        }
+    }
+
+    //设置第二个item名字
+    public void setSecondItemName(String name){
+        if(!TextUtils.isEmpty(name)){
+            mSecondBtn.setText(name);
+        }
     }
 }

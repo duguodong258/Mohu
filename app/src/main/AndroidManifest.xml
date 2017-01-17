@@ -7,7 +7,7 @@
     <application
         android:allowBackup="true"
         android:name=".base.MohuApplication"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/zs"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
@@ -25,6 +25,7 @@
         <activity android:name=".activity.CodeActivity"/>
         <activity android:name=".activity.PublishActivity"/>
         <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.EditActivity"/>
     </application>
 
 

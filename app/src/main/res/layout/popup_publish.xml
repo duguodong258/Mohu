@@ -13,7 +13,7 @@
 
 
         <Button
-            android:id="@+id/btn_publishPhoto"
+            android:id="@+id/btn_firstItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/selector_popup_bg"
@@ -26,7 +26,7 @@
         <View style="@style/line" />
 
         <Button
-            android:id="@+id/btn_publishVideo"
+            android:id="@+id/btn_secondItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/selector_popup_bg"

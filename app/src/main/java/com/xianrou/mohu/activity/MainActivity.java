@@ -1,15 +1,16 @@
 package com.xianrou.mohu.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.xianrou.mohu.AppConfig;
 import com.xianrou.mohu.R;
 import com.xianrou.mohu.base.BaseActivity;
-import com.xianrou.mohu.widget.PublishPopupWindow;
+import com.xianrou.mohu.util.ActivityUtil;
+import com.xianrou.mohu.widget.BottomPopupWindow;
 
 /**
  * @author 咸鱼
@@ -19,6 +20,7 @@ import com.xianrou.mohu.widget.PublishPopupWindow;
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private LinearLayout root_view;
+    private BottomPopupWindow mPopupWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,38 +53,37 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 showPop();
                 break;
             case R.id.tv_home ://首页 跳到home_activity 直接显示首页fragment
-                jump2Activity(HomeActivity.class);
+                ActivityUtil.startActivity(this,HomeActivity.class);
                 break;
             case R.id.tv_my_reward ://我的打赏 跳到home_activity 直接显示我的打赏fragment
-                jump2Activity(HomeActivity.class);
+                ActivityUtil.startActivity(this,HomeActivity.class);
                 break;
             case R.id.tv_my_share ://我的分享  跳到home_activity 直接显示我的分享fragment
-                jump2Activity(LoginActivity.class);
+                ActivityUtil.startActivity(this,HomeActivity.class);
                 break;
             case R.id.tv_mine ://我的  跳到home_activity 直接显示我的资料fragment
-                jump2Activity(LoginActivity.class);
+                ActivityUtil.startActivity(this,HomeActivity.class);
                 break;
             case R.id.tv_code ://标识码
-                jump2Activity(CodeActivity.class);
+                ActivityUtil.startActivity(this,CodeActivity.class);
                 break;
-            case R.id.btn_publishPhoto ://发布相册
-                jump2Activity(PublishActivity.class);
+            case R.id.btn_firstItem://发布相册
+                mPopupWindow.dismiss();
+                ActivityUtil.startActivity(this,PublishActivity.class,AppConfig.PUBLISH_PHOTO);
                 break;
-            case R.id.btn_publishVideo ://发布视频
-                jump2Activity(PublishActivity.class);
+            case R.id.btn_secondItem://发布视频
+                mPopupWindow.dismiss();
+                ActivityUtil.startActivity(this,PublishActivity.class,AppConfig.PUBLISH_VIDEO);
                 break;
         }
     }
 
 
     private void showPop() {
-        PublishPopupWindow popupWindow = new PublishPopupWindow(mContext, this);
-        popupWindow.showAtLocation(root_view, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL,0,0);
+        mPopupWindow = new BottomPopupWindow(mContext, this);
+        mPopupWindow.setFirstItemName("发布相册");
+        mPopupWindow.setSecondItemName("发布视频");
+        mPopupWindow.showAtLocation(root_view, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL,0,0);
     }
 
-
-    private void jump2Activity(Class clz) {
-        Intent intent = new Intent(this,clz);
-        startActivity(intent);
-    }
 }
