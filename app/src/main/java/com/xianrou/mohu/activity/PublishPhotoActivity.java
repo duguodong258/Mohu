@@ -22,7 +22,7 @@ import com.xianrou.mohu.widget.BottomPopupWindow;
  * @des 发布信息填写页面
  */
 
-public class PublishActivity extends BaseActivity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener {
+public class PublishPhotoActivity extends BaseActivity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener {
 
     private BottomPopupWindow mPopupWindow;
     private SeekBar seekBar;//拖动进度条
@@ -41,7 +41,7 @@ public class PublishActivity extends BaseActivity implements SeekBar.OnSeekBarCh
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         int flag = (int) getIntent().getExtras().get("flag");//区分是发布相册还是视频(在创建布局之前)
-        setContentView(R.layout.activity_publish);
+        setContentView(R.layout.activity_publish_photo);
         initView();
     }
 
@@ -86,22 +86,22 @@ public class PublishActivity extends BaseActivity implements SeekBar.OnSeekBarCh
             case R.id.rl_award_amount ://打赏金额
                 showPop();
                 break;
-            case R.id.rl_photo_description ://相册描述
-                mPopupWindow.dismiss();
+            case R.id.rl_photo_description ://相册描述or视频描述
+                ActivityUtil.startActivity(this,DescriptionActivity.class, AppConfig.PUBLISH_PHOTO);
                 break;
             case R.id.btn_adjustPhoto ://调整照片
-                ToastUtil.showToast(mContext,"啊哈哈哈");
+                ToastUtil.showToast(mContext,"调整照片");
                 break;
             case R.id.btn_SaveShare ://保存分享
-
+                ToastUtil.showToast(mContext,"保存分享");
                 break;
             case R.id.btn_firstItem://固定赏金
                 mPopupWindow.dismiss();
-                ActivityUtil.startActivity(this,EditActivity.class, AppConfig.FIXED_BOUNTY);
+                ActivityUtil.startActivity(this,RewardActivity.class, AppConfig.FIXED_BOUNTY);
                 break;
             case R.id.btn_secondItem://随机赏金
                 mPopupWindow.dismiss();
-                ActivityUtil.startActivity(this,EditActivity.class,AppConfig.RANDOM_BOUNTY);
+                ActivityUtil.startActivity(this,RewardActivity.class,AppConfig.RANDOM_BOUNTY);
                 break;
         }
     }

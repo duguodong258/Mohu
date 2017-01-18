@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_root"
+              android:orientation="vertical"
+              android:background="@color/edit_bg"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:text="图片标题"
+            android:textColor="@color/edit_tvColor"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/fontSize_16sp"
+            android:layout_marginLeft="@dimen/Spacing_10dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/Spacing_40dp"/>
+
+        <EditText
+            android:id="@+id/et_input_title"
+            android:paddingLeft="@dimen/Spacing_10dp"
+            android:hint="请输入标题"
+            android:background="@color/white"
+            android:textColorHint="@color/edit_tvColorHint"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/Spacing_40dp"/>
+
+    <TextView
+        android:id="@+id/tv_title_wordNumber"
+        android:text="0/20"
+        android:textSize="@dimen/fontSize_13sp"
+        android:gravity="end"
+        android:paddingTop="@dimen/Spacing_2dp"
+        android:paddingRight="@dimen/Spacing_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:text="图片描述"
+            android:textColor="@color/edit_tvColor"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/fontSize_16sp"
+            android:layout_marginLeft="@dimen/Spacing_10dp"
+            android:gravity="bottom"
+            android:paddingBottom="@dimen/Spacing_10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/Spacing_50dp"/>
+
+        <EditText
+            android:id="@+id/et_input_des"
+            android:gravity="top"
+            android:padding="@dimen/Spacing_10dp"
+            android:hint="请输入描述"
+            android:layout_marginTop="@dimen/Spacing_1dp"
+            android:background="@color/white"
+            android:textColorHint="@color/edit_tvColorHint"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/Spacing_100dp"/>
+
+    <TextView
+        android:id="@+id/tv_des_wordNumber"
+        android:text="0/50"
+        android:textSize="@dimen/fontSize_13sp"
+        android:gravity="end"
+        android:paddingTop="@dimen/Spacing_2dp"
+        android:paddingRight="@dimen/Spacing_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

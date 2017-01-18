@@ -69,11 +69,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn_firstItem://发布相册
                 mPopupWindow.dismiss();
-                ActivityUtil.startActivity(this,PublishActivity.class,AppConfig.PUBLISH_PHOTO);
+                ActivityUtil.startActivity(this,PublishPhotoActivity.class,AppConfig.PUBLISH_PHOTO);
                 break;
             case R.id.btn_secondItem://发布视频
                 mPopupWindow.dismiss();
-                ActivityUtil.startActivity(this,PublishActivity.class,AppConfig.PUBLISH_VIDEO);
+                ActivityUtil.startActivity(this,PublishVideoActivity.class,AppConfig.PUBLISH_VIDEO);
                 break;
         }
     }

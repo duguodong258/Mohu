@@ -15,10 +15,10 @@ import com.xianrou.mohu.base.BaseActivity;
 /**
  * @author 咸鱼
  * @date 2017/1/14
- * @des 标识码
+ * @des 打赏详情页
  */
 
-public class EditActivity extends BaseActivity {
+public class RewardActivity extends BaseActivity {
 
     private EditText mEtMinAmount;
     private EditText mEtMaxAmount;
@@ -29,17 +29,7 @@ public class EditActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
         initView();
-        int flag = (int) getIntent().getExtras().get("flag");
-        switch (flag) {
-            case AppConfig.FIXED_BOUNTY ://固定赏金
-                mTvAwardAmountType.setText("固定");
-                mEtMinAmount.setHint("请输入打赏金额");
-                break;
-            case AppConfig.RANDOM_BOUNTY ://随机赏金
-                mTvAwardAmountType.setText("随机");
-                mEtMaxAmount.setVisibility(View.VISIBLE);
-                break;
-        }
+
     }
 
     private void initView() {
@@ -52,5 +42,16 @@ public class EditActivity extends BaseActivity {
         mTvAwardAmountType = (TextView) findViewById(R.id.tv_award_amount_type);
         mEtMinAmount = (EditText) findViewById(R.id.et_minAmount);
         mEtMaxAmount = (EditText) findViewById(R.id.et_maxAmount);
+        int flag = (int) getIntent().getExtras().get("flag");
+        switch (flag) {
+            case AppConfig.FIXED_BOUNTY ://固定赏金
+                mTvAwardAmountType.setText("固定");
+                mEtMinAmount.setHint("请输入打赏金额");
+                break;
+            case AppConfig.RANDOM_BOUNTY ://随机赏金
+                mTvAwardAmountType.setText("随机");
+                mEtMaxAmount.setVisibility(View.VISIBLE);
+                break;
+        }
     }
 }
