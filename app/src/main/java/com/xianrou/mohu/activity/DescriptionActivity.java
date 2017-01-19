@@ -2,7 +2,6 @@ package com.xianrou.mohu.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -19,7 +18,7 @@ import com.xianrou.mohu.util.EditTextUtil;
  * @des 视频、相册描述详情页
  */
 
-public class DescriptionActivity extends BaseActivity {
+public class DescriptionActivity extends BaseActivity implements EditTextUtil.IEditTextChangeListener {
 
     private LinearLayout llRoot;//根布局
     private RelativeLayout layoutTitle;
@@ -51,17 +50,15 @@ public class DescriptionActivity extends BaseActivity {
         llRightLayout = (LinearLayout) findViewById(R.id.ll_rightLayout);
         tvRightText = (TextView) findViewById(R.id.tvRightText);
         tvTitle = (TextView) findViewById(R.id.tv_title);
-        tvTitleWordNumber = (TextView) findViewById(R.id.tv_title_wordNumber);
         tvDescription = (TextView) findViewById(R.id.tv_description);
+        tvTitleWordNumber = (TextView) findViewById(R.id.tv_title_wordNumber);
         tvDesWordNumber = (TextView) findViewById(R.id.tv_des_wordNumber);
         etInputTitle = (EditText) findViewById(R.id.et_input_title);
         etInputDes = (EditText) findViewById(R.id.et_input_des);
-        new EditTextUtil(etInputTitle,etInputDes).setListener(new EditTextUtil.IEditTextChangeListener() {
-            @Override
-            public void getContentLength(int length) {
-                Log.i("TAG", "length : "+length);
-            }
-        });
+        EditTextUtil editTextUtil = new EditTextUtil();
+        editTextUtil.setListener(this);
+        editTextUtil.change(etInputTitle);
+        editTextUtil.change(etInputDes);
 
         int flag = (int) getIntent().getExtras().get("flag");
         switch (flag) {
@@ -73,6 +70,15 @@ public class DescriptionActivity extends BaseActivity {
                 tvTitle.setText("视频标题");
                 tvDescription.setText("视频描述");
                 break;
+        }
+    }
+
+    @Override
+    public void getContentLength(int length, EditText editText) {
+        if(editText == etInputTitle){//标题的et监听
+                tvTitleWordNumber.setText(length+"/20");
+        }else if(editText == etInputDes){//描述的et监听
+                tvDesWordNumber.setText(length+"/50");
         }
     }
 }

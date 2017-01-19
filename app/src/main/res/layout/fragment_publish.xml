@@ -4,23 +4,10 @@
               android:gravity="center"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
     <TextView
-        android:text="标识码 activity"
+        android:text="发布"
+        android:textStyle="bold"
         android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <com.xianrou.mohu.widget.TabPageIndicator
-        android:id="@+id/indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"/>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-
-    </android.support.v4.view.ViewPager>
 </LinearLayout>

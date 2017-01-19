@@ -15,4 +15,11 @@ public class AppConfig {
     //打赏金额
     public static final int FIXED_BOUNTY = 1;//固定赏金
     public static final int RANDOM_BOUNTY = 2;//随机赏金
+
+    //Fragment
+    public static final int FRAGMENT_HOME = 0;//首页
+    public static final int FRAGMENT_FIND = 1;//发现
+    public static final int FRAGMENT_PUBLISH = 2;//发布
+    public static final int FRAGMENT_MINE = 3;//我的
+    public static final int FRAGMENT_EASY = 4;//轻巧
 }

@@ -2,6 +2,9 @@ package com.xianrou.mohu.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +38,7 @@ public class PublishPhotoActivity extends BaseActivity implements SeekBar.OnSeek
     private TextView mTvAwardAmountType;//打赏金额类型 固定or随机
     private TextView mTvDescription;//描述内容
     private RelativeLayout mRoot_view;//根布局
-
+    private RecyclerView mRecyclerView;//照片的recycleview
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class PublishPhotoActivity extends BaseActivity implements SeekBar.OnSeek
     }
 
     private void initView() {
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_publish_photo);
         mRoot_view = (RelativeLayout) findViewById(R.id.rl_root);
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
         RelativeLayout rlAwardAmount = (RelativeLayout) findViewById(R.id.rl_award_amount);
@@ -61,6 +65,13 @@ public class PublishPhotoActivity extends BaseActivity implements SeekBar.OnSeek
         rlPhotoDescription.setOnClickListener(this);
         btnSaveShare.setOnClickListener(this);
         btnAdjustPhoto.setOnClickListener(this);
+        initRecycleview();
+    }
+
+    private void initRecycleview() {
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, LinearLayoutManager.HORIZONTAL);
+        mRecyclerView.setLayoutManager(gridLayoutManager);
+        mRecyclerView.setAdapter();
     }
 
 

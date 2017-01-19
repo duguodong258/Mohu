@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-</LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_bottom"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/style_RadioButton"
+            android:text="首页"/>
+        <RadioButton
+            android:id="@+id/rb_find"
+            style="@style/style_RadioButton"
+            android:text="发现"/>
+        <RadioButton
+            android:id="@+id/rb_publish"
+            style="@style/style_RadioButton"
+            android:text="发布"/>
+
+        <RadioButton
+            android:id="@+id/rb_mine"
+            style="@style/style_RadioButton"
+            android:text="我的"/>
+        <RadioButton
+            android:id="@+id/rb_easy"
+            style="@style/style_RadioButton"
+            android:text="轻巧"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/ll_fg_container"
+        android:orientation="vertical"
+        android:layout_above="@id/radioGroup_bottom"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </LinearLayout>
+</RelativeLayout>

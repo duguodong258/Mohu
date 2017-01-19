@@ -2,7 +2,6 @@ package com.xianrou.mohu.util;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.widget.EditText;
 
 /**
@@ -11,7 +10,7 @@ import android.widget.EditText;
  * @des ${TODO}
  */
 
-public class EditTextUtil implements TextWatcher {
+public class EditTextUtil {
 
     private IEditTextChangeListener mListener;
 
@@ -19,30 +18,27 @@ public class EditTextUtil implements TextWatcher {
         mListener = listener;
     }
 
-    public EditTextUtil(EditText...editTexts) {
-        for (EditText editText : editTexts) {
-            editText.addTextChangedListener(this);
-        }
-    }
+    public void change(final EditText editText){
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-    @Override
-    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
-    }
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                mListener.getContentLength(charSequence.length(),editText);
+            }
 
-    @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        Log.i("TAG", "charSequence:"+charSequence);
-        mListener.getContentLength(charSequence.length());
-    }
+            @Override
+            public void afterTextChanged(Editable editable) {
 
-    @Override
-    public void afterTextChanged(Editable editable) {
-
+            }
+        });
     }
 
 
     public interface IEditTextChangeListener{
-        void getContentLength(int length);
+        void getContentLength(int length,EditText editText);
     }
 }

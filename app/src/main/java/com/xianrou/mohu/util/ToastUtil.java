@@ -1,5 +1,6 @@
 package com.xianrou.mohu.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ public class ToastUtil {
         if(mToast == null){
             mToast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
         }
-        mToast.show();
+            mToast.show();
     }
 
     public static void showToast(Context context,int res){
@@ -28,4 +29,22 @@ public class ToastUtil {
         mToast.show();
     }
 
+
+    //子线程吐司
+    public static void showToast(final Activity activity, final String msg){
+        if(mToast == null){
+            mToast = Toast.makeText(activity, msg, Toast.LENGTH_SHORT);
+        }
+        if("main".equals(Thread.currentThread().getName())){
+            mToast.show();
+        }else{
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mToast.show();
+                }
+            });
+        }
+
+    }
 }

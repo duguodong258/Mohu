@@ -41,17 +41,16 @@ public class CodeActivity extends BaseActivity {
         mScreenWidth=metrics.widthPixels;
     }
 
-    private void updateUI() {
-        mViewPager.setAdapter(new TestAdapter(getSupportFragmentManager()));
-        mIndicator.setViewPager(mViewPager);
-    }
-
     private void initView() {
         mViewPager= (ViewPager) findViewById(R.id.vp);
         mIndicator= (TabPageIndicator) findViewById(R.id.indicator);
         mIndicator.setTextSize(mScreenWidth/22);
         mIndicator.setTabPadding(mScreenWidth/22);
+    }
 
+    private void updateUI() {
+        mViewPager.setAdapter(new TestAdapter(getSupportFragmentManager()));
+        mIndicator.setViewPager(mViewPager);
     }
 
     public class TestAdapter extends FragmentPagerAdapter {

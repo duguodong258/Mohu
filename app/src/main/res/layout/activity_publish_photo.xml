@@ -3,14 +3,14 @@
                 android:id="@+id/rl_root"
               android:background="@color/edit_bg"
               style="@style/style_widthM_heightM">
-    <ImageView
-        android:id="@+id/iv_img"
-        android:src="@drawable/zs"
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_publish_photo"
         android:layout_width="match_parent"
         android:layout_height="@dimen/Spacing_200dp"/>
 
     <LinearLayout
-        android:layout_below="@id/iv_img"
+        android:layout_below="@id/rv_publish_photo"
         android:layout_marginTop="@dimen/Spacing_20dp"
         android:orientation="vertical"
         style="@style/style_widthM_heightW">

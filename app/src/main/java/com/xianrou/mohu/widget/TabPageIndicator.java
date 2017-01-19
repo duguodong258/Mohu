@@ -18,6 +18,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.xianrou.mohu.R;
+
 /**
  * @author 咸鱼
  * @date 2017/1/17 0017
@@ -30,6 +32,15 @@ public class TabPageIndicator extends HorizontalScrollView implements ViewPager.
     private int mTabPaddingRight=16;
 
     private int mTextColor = Color.BLACK;
+
+    public void setTextColor(int textColor) {
+        mTextColor = textColor;
+    }
+
+    public void setSelectTextColor(int selectTextColor) {
+        mSelectTextColor = selectTextColor;
+    }
+
     private int mSelectTextColor = Color.BLUE;
     private int mTextSize = 16;
 
@@ -40,8 +51,8 @@ public class TabPageIndicator extends HorizontalScrollView implements ViewPager.
     private float mOffset;
 
     private Paint mSelectLinePaint;
-    private int mLineColor=Color.RED;
-    private int mLineHeight=4;
+    private int mLineColor= getResources().getColor(R.color.indicator_tvColor_selected);
+    private int mLineHeight=5;
 
     private LinearLayout mLinearLayout;
 

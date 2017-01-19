@@ -22,6 +22,7 @@
         <EditText
             android:id="@+id/et_input_title"
             android:paddingLeft="@dimen/Spacing_10dp"
+            android:maxLength="20"
             android:hint="请输入标题"
             android:background="@color/white"
             android:textColorHint="@color/edit_tvColorHint"
@@ -54,6 +55,7 @@
             android:id="@+id/et_input_des"
             android:gravity="top"
             android:padding="@dimen/Spacing_10dp"
+            android:maxLength="50"
             android:hint="请输入描述"
             android:layout_marginTop="@dimen/Spacing_1dp"
             android:background="@color/white"
