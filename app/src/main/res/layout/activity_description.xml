@@ -3,8 +3,7 @@
               android:id="@+id/ll_root"
               android:orientation="vertical"
               android:background="@color/edit_bg"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              style="@style/style_widthM_heightM">
 
     <include layout="@layout/layout_title"/>
 
@@ -23,7 +22,7 @@
             android:id="@+id/et_input_title"
             android:paddingLeft="@dimen/Spacing_10dp"
             android:maxLength="20"
-            android:hint="请输入标题"
+            android:hint="@string/input_title"
             android:background="@color/white"
             android:textColorHint="@color/edit_tvColorHint"
             android:layout_width="match_parent"
@@ -56,7 +55,7 @@
             android:gravity="top"
             android:padding="@dimen/Spacing_10dp"
             android:maxLength="50"
-            android:hint="请输入描述"
+            android:hint="@string/input_des"
             android:layout_marginTop="@dimen/Spacing_1dp"
             android:background="@color/white"
             android:textColorHint="@color/edit_tvColorHint"

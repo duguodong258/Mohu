@@ -29,14 +29,14 @@
     </style>
 
     <!--首页ll style-->
-    <style name="ll_home_style">
+    <style name="style_ll_home">
         <item name="android:orientation">horizontal</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">0dp</item>
     </style>
     <!--首页图片style-->
-    <style name="tv_home_style">
+    <style name="style_tv_home">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">match_parent</item>
@@ -46,20 +46,20 @@
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="line">
+    <style name="style_line">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0.5dp</item>
         <item name="android:background">@color/line_color</item>
     </style>
 
-    <style name="edit_rl_style">
+    <style name="style_edit_rl">
         <item name="android:background">@color/white</item>
         <item name="android:padding">@dimen/Spacing_10dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/Spacing_50dp</item>
     </style>
 
-    <style name="edit_tv_style">
+    <style name="style_edit_tv">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/edit_tvColor</item>
@@ -67,7 +67,7 @@
         <item name="android:layout_centerVertical">true</item>
     </style>
 
-    <style name="edit_tv1_style">
+    <style name="style_edit_tv1">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/edit_tvColorHint</item>
@@ -84,5 +84,33 @@
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@drawable/selector_rb_tv_color</item>
+    </style>
+
+    <style name="style_arrow">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/arrow</item>
+    </style>
+
+    <style name="style_rl_profile_item">
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingLeft">@dimen/Spacing_20dp</item>
+        <item name="android:paddingRight">@dimen/Spacing_10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/Spacing_40dp</item>
+    </style>
+
+    <style name="style_tv_profile_item" parent="style_widthW_heightW">
+        <item name="android:textSize">@dimen/fontSize_15sp</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="style_tv_profile_item1" parent="style_widthW_heightW">
+        <item name="android:textSize">@dimen/fontSize_15sp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/Spacing_10dp</item>
     </style>
 </resources>

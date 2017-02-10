@@ -19,4 +19,8 @@
     <color name="radio_tvColor">#DA3A8E</color>
     <color name="indicator_tvColor">#AEAEC3</color>
     <color name="indicator_tvColor_selected">#3399FF</color>
+    <color name="publish_photo_bg">#444444</color>
+    <color name="transparent">#75000000</color>
+    <color name="text_black">#333333</color>
+    <color name="province_line_border">#C7C7C7</color>
 </resources>

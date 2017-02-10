@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/black"
+              android:padding="@dimen/Spacing_10dp"
+              style="@style/style_widthM_heightM">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="@dimen/Spacing_5dp"
+        style="@style/style_widthM_heightM">
+        <ImageView
+            android:src="@drawable/zs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/Spacing_200dp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_save_photo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/Spacing_50dp"/>
+    </LinearLayout>
+
+</LinearLayout>

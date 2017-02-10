@@ -23,7 +23,7 @@
             android:textColor="@color/blank_light"
             android:textSize="15sp" />
 
-        <View style="@style/line" />
+        <View style="@style/style_line" />
 
         <Button
             android:id="@+id/btn_secondItem"

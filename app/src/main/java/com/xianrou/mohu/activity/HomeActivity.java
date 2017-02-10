@@ -12,11 +12,11 @@ import android.widget.RadioGroup;
 import com.xianrou.mohu.AppConfig;
 import com.xianrou.mohu.R;
 import com.xianrou.mohu.base.BaseActivity;
-import com.xianrou.mohu.fragment.EasyFragment;
 import com.xianrou.mohu.fragment.FindFragment;
 import com.xianrou.mohu.fragment.HomeFragment;
 import com.xianrou.mohu.fragment.MineFragment;
 import com.xianrou.mohu.fragment.PublishFragment;
+import com.xianrou.mohu.util.ActivityUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,12 +64,10 @@ public class HomeActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         FindFragment findFragment = new FindFragment();
         PublishFragment publishFragment = new PublishFragment();
         MineFragment mineFragment = new MineFragment();
-        EasyFragment easyFragment = new EasyFragment();
         mFragmentList.add(homeFragment);
         mFragmentList.add(findFragment);
         mFragmentList.add(publishFragment);
         mFragmentList.add(mineFragment);
-        mFragmentList.add(easyFragment);
         //默认显示首页
         change(AppConfig.FRAGMENT_HOME);
     }
@@ -89,7 +87,7 @@ public class HomeActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                 change(AppConfig.FRAGMENT_MINE);
                 break;
             case R.id.rb_easy :
-                change(AppConfig.FRAGMENT_EASY);
+                ActivityUtil.startActivity(this,MainActivity.class,true);
                 break;
         }
     }

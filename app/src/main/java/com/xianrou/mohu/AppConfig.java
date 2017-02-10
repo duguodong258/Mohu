@@ -22,4 +22,9 @@ public class AppConfig {
     public static final int FRAGMENT_PUBLISH = 2;//发布
     public static final int FRAGMENT_MINE = 3;//我的
     public static final int FRAGMENT_EASY = 4;//轻巧
+
+    //个人资料
+    public static final int ACCOUNT = 1;     //性别
+    public static final int NICKNAME = 2;   //昵称
+    public static final int ALIPAY = 3;     //支付宝
 }

@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">模糊</string>
+    <string name="app_name">网红赚赚</string>
+
+    <string name="publish">发布</string>
+    <string name="home">首页</string>
+    <string name="my_reward">我的打赏</string>
+    <string name="my_share">我的分享</string>
+    <string name="mine">我的</string>
+    <string name="code">标识码</string>
+
+    <string name="alpha">透明度</string>
+    <string name="award_amount">打赏金额</string>
+    <string name="award_amount_type">固定</string>
+    <string name="photo_description">相册描述</string>
+    <string name="save_share">保存分享</string>
+    <string name="adjustPhoto">调整照片</string>
+    <string name="input_title">请输入标题</string>
+    <string name="input_des">请输入描述</string>
+    <string name="discover">发现</string>
+    <string name="easy">轻巧</string>
+    <string name="register">注册</string>
+    <string name="input_phoneNumber">请输入手机号码</string>
+    <string name="get_phone_code">获取手机验证码</string>
+    <string name="other_login">第三方登录</string>
+    <string name="exit_app">再按一次退出应用</string>
 </resources>

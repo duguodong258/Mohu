@@ -5,9 +5,8 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <TextView
-        android:text="轻巧"
-        android:textStyle="bold"
-        android:textSize="30sp"
+        android:text="我是SplashActivity"
+        android:textSize="40sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </LinearLayout>

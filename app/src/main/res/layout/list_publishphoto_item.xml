@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/fl_root"
+              android:layout_width="100dp"
+              android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/iv_photo_source"
+        android:src="@drawable/zs"
+        android:scaleType="centerCrop"
+        style="@style/style_widthM_heightM"/>
+    <ImageView
+        android:id="@+id/iv_photo_blur"
+        android:src="@drawable/zs"
+        android:scaleType="centerCrop"
+        style="@style/style_widthM_heightM"/>
+    <View
+        android:id="@+id/photo_bg"
+        android:background="@color/transparent"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        style="@style/style_widthM_heightM"/>
+</FrameLayout>

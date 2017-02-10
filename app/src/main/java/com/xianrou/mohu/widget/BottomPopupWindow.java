@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.PopupWindow;
@@ -27,12 +28,14 @@ public class BottomPopupWindow extends PopupWindow {
     private final View popupView;//popup的布局
     private final Button mFirstBtn;
     private final Button mSecondBtn;
+    private Context mContext;
 
     //构造器传入一个点击监听器
     public BottomPopupWindow(Context context, View.OnClickListener clickListener) {
         super(context);
+        mContext = context;
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        popupView = inflater.inflate(R.layout.popup_publish, null);
+        popupView = inflater.inflate(R.layout.popup_bottom, null);
         mFirstBtn = (Button) popupView.findViewById(R.id.btn_firstItem);
         mSecondBtn = (Button) popupView.findViewById(R.id.btn_secondItem);
 
@@ -60,7 +63,7 @@ public class BottomPopupWindow extends PopupWindow {
                 int rawY = (int) event.getRawY();//手指点击的y坐标
                 if(event.getAction() == MotionEvent.ACTION_UP){
                     if(rawY > height){ //说明点在了外边
-                        dismiss();
+                        popupView.startAnimation(AnimationUtils.loadAnimation(mContext,R.anim.popupwindow_out));
                     }
                 }
                 return true;
@@ -72,7 +75,8 @@ public class BottomPopupWindow extends PopupWindow {
     //用来显示popupwindow
     private void show() {
         popupView.startAnimation(getAlphaAnimation(DURATION,0f,1f));
-        popupView.startAnimation(getTranslateAnimationY(DURATION,1f,0f,true));
+//        popupView.startAnimation(getTranslateAnimationY(DURATION,1f,0f,true));
+        popupView.startAnimation(AnimationUtils.loadAnimation(mContext,R.anim.popupwindow_in));
     }
 
     @Override

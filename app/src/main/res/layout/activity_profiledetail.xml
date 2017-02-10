@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/edit_bg"
+              style="@style/style_widthM_heightM">
+
+    <include layout="@layout/layout_title"/>
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:paddingRight="@dimen/Spacing_10dp"
+        style="@style/style_widthM_heightW">
+        <EditText
+            android:id="@+id/et_profile"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/Spacing_10dp"
+            android:paddingRight="@dimen/Spacing_20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/Spacing_40dp" />
+        <ImageView
+            android:id="@+id/iv_clean_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ease_search_clear_pressed"
+            style="@style/style_widthW_heightW"/>
+    </RelativeLayout>
+
+</LinearLayout>

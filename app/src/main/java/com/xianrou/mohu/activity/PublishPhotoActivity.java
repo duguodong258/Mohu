@@ -2,7 +2,6 @@ package com.xianrou.mohu.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -14,10 +13,19 @@ import android.widget.TextView;
 
 import com.xianrou.mohu.AppConfig;
 import com.xianrou.mohu.R;
+import com.xianrou.mohu.adapter.PublishPhotoAdapter;
 import com.xianrou.mohu.base.BaseActivity;
+import com.xianrou.mohu.bean.PublishPhotoEntity;
+import com.xianrou.mohu.events.BlurEvent;
 import com.xianrou.mohu.util.ActivityUtil;
 import com.xianrou.mohu.util.ToastUtil;
 import com.xianrou.mohu.widget.BottomPopupWindow;
+import com.xianrou.mohu.widget.SpaceItemDecoration;
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author 咸鱼
@@ -39,14 +47,17 @@ public class PublishPhotoActivity extends BaseActivity implements SeekBar.OnSeek
     private TextView mTvDescription;//描述内容
     private RelativeLayout mRoot_view;//根布局
     private RecyclerView mRecyclerView;//照片的recycleview
+    private List<PublishPhotoEntity> mDatas;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int flag = (int) getIntent().getExtras().get("flag");//区分是发布相册还是视频(在创建布局之前)
         setContentView(R.layout.activity_publish_photo);
         initView();
+        initData();
     }
+
+
 
     private void initView() {
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_publish_photo);
@@ -65,13 +76,26 @@ public class PublishPhotoActivity extends BaseActivity implements SeekBar.OnSeek
         rlPhotoDescription.setOnClickListener(this);
         btnSaveShare.setOnClickListener(this);
         btnAdjustPhoto.setOnClickListener(this);
+
+    }
+
+    private void initData() {
+        mDatas = new ArrayList<>();
+            PublishPhotoEntity publishPhotoEntity = new PublishPhotoEntity(R.drawable.zs);
+            mDatas.add(publishPhotoEntity);
+            PublishPhotoEntity publishPhotoEntity1 = new PublishPhotoEntity(R.drawable.zs1);
+            mDatas.add(publishPhotoEntity1);
+            PublishPhotoEntity publishPhotoEntity2 = new PublishPhotoEntity(R.drawable.zs2);
+            mDatas.add(publishPhotoEntity2);
         initRecycleview();
     }
 
     private void initRecycleview() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, LinearLayoutManager.HORIZONTAL);
-        mRecyclerView.setLayoutManager(gridLayoutManager);
-        mRecyclerView.setAdapter();
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        mRecyclerView.addItemDecoration(new SpaceItemDecoration(8));
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setAdapter(new PublishPhotoAdapter(mDatas,mContext));
     }
 
 
@@ -79,6 +103,8 @@ public class PublishPhotoActivity extends BaseActivity implements SeekBar.OnSeek
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
         mTv_percentage.setText(""+progress);
+        //拖动改变照片模糊度(透明度)
+        EventBus.getDefault().post(new BlurEvent(progress));
     }
     //开始拖动事件监听
     @Override
@@ -103,8 +129,8 @@ public class PublishPhotoActivity extends BaseActivity implements SeekBar.OnSeek
             case R.id.btn_adjustPhoto ://调整照片
                 ToastUtil.showToast(mContext,"调整照片");
                 break;
-            case R.id.btn_SaveShare ://保存分享
-                ToastUtil.showToast(mContext,"保存分享");
+            case R.id.btn_SaveShare ://保存分享 (需要从发布的adapter把数据集合返回给activity 发送到保存分享的activity)
+                ActivityUtil.startActivity(this,SaveAndShareActivity.class,mDatas,"photoList");
                 break;
             case R.id.btn_firstItem://固定赏金
                 mPopupWindow.dismiss();

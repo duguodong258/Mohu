@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              style="@style/style_widthM_heightM">
 
 
     <RadioGroup
         android:id="@+id/radioGroup_bottom"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        style="@style/style_widthM_heightW">
         <RadioButton
             android:id="@+id/rb_home"
             style="@style/style_RadioButton"
-            android:text="首页"/>
+            android:text="@string/home"/>
         <RadioButton
             android:id="@+id/rb_find"
             style="@style/style_RadioButton"
-            android:text="发现"/>
+            android:text="@string/discover"/>
         <RadioButton
             android:id="@+id/rb_publish"
             style="@style/style_RadioButton"
-            android:text="发布"/>
+            android:text="@string/publish"/>
 
         <RadioButton
             android:id="@+id/rb_mine"
             style="@style/style_RadioButton"
-            android:text="我的"/>
+            android:text="@string/mine"/>
         <RadioButton
             android:id="@+id/rb_easy"
             style="@style/style_RadioButton"
-            android:text="轻巧"/>
+            android:text="@string/easy"/>
     </RadioGroup>
 
     <LinearLayout
@@ -39,7 +37,6 @@
         android:orientation="vertical"
         android:layout_above="@id/radioGroup_bottom"
         android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        style="@style/style_widthM_heightM">
     </LinearLayout>
 </RelativeLayout>

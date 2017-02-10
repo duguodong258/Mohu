@@ -14,7 +14,7 @@
             android:layout_height="match_parent" />
 
         <TextView
-            android:text="注册"
+            android:text="@string/register"
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="#42a2da"
@@ -43,13 +43,13 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:layout_width="300dp"
-        android:hint="请输入手机号码"
+        android:hint="@string/input_phoneNumber"
         android:layout_height="50dp" />
 
     <Button
         android:gravity="center"
         android:background="#42a2da"
-        android:text="获取手机验证码"
+        android:text="@string/get_phone_code"
         android:textSize="18sp"
         android:textColor="#fff"
         android:layout_gravity="center_horizontal"
@@ -70,7 +70,7 @@
             android:layout_width="120dp"
             android:layout_height="0.5dp"/>
         <TextView
-            android:text="第三方登录"
+            android:text="@string/other_login"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_width="wrap_content"

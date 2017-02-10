@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/ll_root"
+              android:orientation="vertical"
+              android:background="@color/edit_bg"
+              style="@style/style_widthM_heightM">
+
+    <include layout="@layout/layout_title"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_avatar"
+        android:layout_marginTop="@dimen/Spacing_20dp"
+        android:paddingLeft="@dimen/Spacing_20dp"
+        android:paddingRight="@dimen/Spacing_10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Spacing_100dp">
+        <TextView
+            android:text="头像"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/fontSize_16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/iv_arrow_avatar"
+            style="@style/style_arrow"/>
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:src="@drawable/hb"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/Spacing_70dp"
+            android:layout_height="@dimen/Spacing_70dp"
+            android:layout_toLeftOf="@id/iv_arrow_avatar"
+            android:layout_marginRight="@dimen/Spacing_10dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:text="个人信息"
+        android:paddingLeft="@dimen/Spacing_20dp"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/fontSize_15sp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Spacing_40dp"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_nickName"
+        style="@style/style_rl_profile_item">
+        <TextView
+            android:text="昵称"
+            style="@style/style_tv_profile_item"/>
+        <ImageView
+            android:id="@+id/iv_arrow_nickName"
+            style="@style/style_arrow"/>
+        <TextView
+            android:id="@+id/tv_nickName"
+            android:text="周二珂"
+            style="@style/style_tv_profile_item1"
+            android:layout_toLeftOf="@id/iv_arrow_nickName"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_gender"
+        android:layout_marginTop="@dimen/Spacing_1dp"
+        style="@style/style_rl_profile_item">
+        <TextView
+            android:text="性别"
+            style="@style/style_tv_profile_item"/>
+        <ImageView
+            android:id="@+id/iv_arrow_gender"
+            style="@style/style_arrow"/>
+        <TextView
+            android:id="@+id/tv_gender"
+            android:text="男"
+            style="@style/style_tv_profile_item1"
+            android:layout_toLeftOf="@id/iv_arrow_gender"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_area"
+        android:layout_marginTop="@dimen/Spacing_1dp"
+        style="@style/style_rl_profile_item">
+        <TextView
+            android:text="地区"
+            style="@style/style_tv_profile_item"/>
+        <ImageView
+            android:id="@+id/iv_arrow_area"
+            style="@style/style_arrow"/>
+        <TextView
+            android:id="@+id/tv_area"
+            android:text="广东 韶关"
+            style="@style/style_tv_profile_item1"
+            android:layout_toLeftOf="@id/iv_arrow_area"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_blurb"
+        style="@style/style_rl_profile_item">
+        <TextView
+            android:text="简介"
+            style="@style/style_tv_profile_item"/>
+        <ImageView
+            android:id="@+id/iv_arrow_blurb"
+            style="@style/style_arrow"/>
+        <TextView
+            android:id="@+id/tv_blurb"
+            android:text="我们的开始 是最长的电影"
+            android:maxLines="1"
+            android:maxEms="13"
+            style="@style/style_tv_profile_item1"
+            android:layout_toLeftOf="@id/iv_arrow_blurb"/>
+    </RelativeLayout>
+
+    <TextView
+        android:text="安全信息"
+        android:paddingLeft="@dimen/Spacing_20dp"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/fontSize_15sp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Spacing_40dp"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_account"
+        style="@style/style_rl_profile_item">
+        <TextView
+            android:text="账号"
+            style="@style/style_tv_profile_item"/>
+        <ImageView
+            android:id="@+id/iv_arrow_account"
+            style="@style/style_arrow"/>
+        <TextView
+            android:id="@+id/tv_account"
+            android:text="duguodong"
+            style="@style/style_tv_profile_item1"
+            android:layout_toLeftOf="@id/iv_arrow_account"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_phoneNumber"
+        android:layout_marginTop="@dimen/Spacing_1dp"
+        style="@style/style_rl_profile_item">
+        <TextView
+            android:text="手机号"
+            style="@style/style_tv_profile_item"/>
+        <ImageView
+            android:id="@+id/iv_arrow_phoneNumber"
+            style="@style/style_arrow"/>
+        <TextView
+            android:id="@+id/tv_phoneNumber"
+            android:text="13834651266"
+            style="@style/style_tv_profile_item1"
+            android:layout_toLeftOf="@id/iv_arrow_phoneNumber"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_AliPay"
+        android:layout_marginTop="@dimen/Spacing_1dp"
+        style="@style/style_rl_profile_item">
+        <TextView
+            android:text="支付宝"
+            style="@style/style_tv_profile_item"/>
+        <ImageView
+            android:id="@+id/iv_arrow_AliPay"
+            style="@style/style_arrow"/>
+        <TextView
+            android:id="@+id/tv_AliPay"
+            android:text="138****1266"
+            style="@style/style_tv_profile_item1"
+            android:layout_toLeftOf="@id/iv_arrow_AliPay"/>
+    </RelativeLayout>
+</LinearLayout>

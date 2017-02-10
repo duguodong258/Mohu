@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/fl_root"
+                style="@style/style_widthW_heightW">
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="@dimen/Spacing_50dp"
+        android:layout_height="@dimen/Spacing_50dp"/>
+    <TextView
+        android:id="@+id/tv_last_position"
+        android:text="1/4张"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:textSize="@dimen/fontSize_18sp"
+        android:textColor="@color/white"
+        style="@style/style_widthW_heightW"/>
+</FrameLayout>

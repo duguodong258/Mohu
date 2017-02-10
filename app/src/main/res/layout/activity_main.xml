@@ -8,44 +8,44 @@
     tools:context="com.xianrou.mohu.activity.MainActivity">
 
     <LinearLayout
-        style="@style/ll_home_style">
+        style="@style/style_ll_home">
         <TextView
             android:id="@+id/tv_publish"
-            style="@style/tv_home_style"
-            android:text="发布"
+            style="@style/style_tv_home"
+            android:text="@string/publish"
             android:background="@drawable/zs"/>
         <TextView
             android:id="@+id/tv_home"
-            style="@style/tv_home_style"
-            android:text="首页"
+            style="@style/style_tv_home"
+            android:text="@string/home"
             android:background="@drawable/zs1"/>
     </LinearLayout>
 
     <LinearLayout
-        style="@style/ll_home_style">
+        style="@style/style_ll_home">
         <TextView
             android:id="@+id/tv_my_reward"
-            style="@style/tv_home_style"
-            android:text="我的打赏"
+            style="@style/style_tv_home"
+            android:text="@string/my_reward"
             android:background="@drawable/zs1"/>
         <TextView
             android:id="@+id/tv_my_share"
-            style="@style/tv_home_style"
-            android:text="我的分享"
+            style="@style/style_tv_home"
+            android:text="@string/my_share"
             android:background="@drawable/zs2"/>
     </LinearLayout>
 
     <LinearLayout
-        style="@style/ll_home_style">
+        style="@style/style_ll_home">
         <TextView
             android:id="@+id/tv_mine"
-            style="@style/tv_home_style"
-            android:text="我的"
+            style="@style/style_tv_home"
+            android:text="@string/mine"
             android:background="@drawable/zs2"/>
         <TextView
             android:id="@+id/tv_code"
-            style="@style/tv_home_style"
-            android:text="标识码"
+            style="@style/style_tv_home"
+            android:text="@string/code"
             android:background="@drawable/zs"/>
     </LinearLayout>
 </LinearLayout>
