@@ -113,4 +113,13 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_marginRight">@dimen/Spacing_10dp</item>
     </style>
+
+    <style name="style_profile_et">
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingLeft">@dimen/Spacing_10dp</item>
+        <item name="android:paddingRight">@dimen/Spacing_10dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/Spacing_40dp</item>
+    </style>
 </resources>

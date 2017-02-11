@@ -63,7 +63,25 @@ public class BottomPopupWindow extends PopupWindow {
                 int rawY = (int) event.getRawY();//手指点击的y坐标
                 if(event.getAction() == MotionEvent.ACTION_UP){
                     if(rawY > height){ //说明点在了外边
-                        popupView.startAnimation(AnimationUtils.loadAnimation(mContext,R.anim.popupwindow_out));
+                        Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.popupwindow_out);
+                        popupView.startAnimation(animation);
+                        //退出动画执行完毕后dismiss();
+                        animation.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                dismiss();
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
                     }
                 }
                 return true;

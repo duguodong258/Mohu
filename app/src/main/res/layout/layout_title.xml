@@ -18,7 +18,7 @@
             android:layout_gravity="center_vertical"
             android:clickable="false"
             android:scaleType="centerInside"
-            android:src="@drawable/back" />
+            android:src="@drawable/nav_back_nor" />
     </LinearLayout>
 
     <TextView
@@ -37,9 +37,11 @@
         android:id="@+id/ll_rightLayout"
         android:layout_width="@dimen/Spacing_60dp"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
         android:gravity="center"
-        android:onClick="onClick">
+        android:onClick="onClick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <TextView
             android:id="@+id/tvRightText"

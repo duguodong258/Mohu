@@ -29,8 +29,10 @@
         <activity android:name=".activity.RewardActivity"/>
         <activity android:name=".activity.DescriptionActivity"/>
         <activity android:name=".activity.SaveAndShareActivity"/>
-        <activity android:name=".activity.personalprofile.PersonalProfileActivity"/>
-        <activity android:name=".activity.personalprofile.ProfileDetailActivity"/>
+        <activity android:name=".activity.personalProfile.PersonalProfileActivity"/>
+        <activity android:name=".activity.personalProfile.ProfileDetailActivity"/>
+        <activity android:name=".activity.personalProfile.BlurbActivity"/>
+        <activity android:name=".activity.personalProfile.PhoneActivity"/>
     </application>
 
 

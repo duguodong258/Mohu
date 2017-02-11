@@ -23,4 +23,9 @@
     <string name="get_phone_code">获取手机验证码</string>
     <string name="other_login">第三方登录</string>
     <string name="exit_app">再按一次退出应用</string>
+    <string name="personal_profile_title">个人资料</string>
+    <string name="blurb">简介</string>
+    <string name="please_get_sms_code">请先获取验证码</string>
+    <string name="please_input_phoneNumber">请先输入手机号码</string>
+
 </resources>

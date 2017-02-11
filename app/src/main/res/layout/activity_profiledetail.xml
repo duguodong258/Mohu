@@ -11,19 +11,26 @@
         android:background="@color/white"
         android:paddingRight="@dimen/Spacing_10dp"
         style="@style/style_widthM_heightW">
-        <EditText
-            android:id="@+id/et_profile"
-            android:background="@color/white"
-            android:paddingLeft="@dimen/Spacing_10dp"
-            android:paddingRight="@dimen/Spacing_20dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/Spacing_40dp" />
+        <FrameLayout
+            style="@style/style_widthM_heightW">
+            <EditText
+                android:id="@+id/et_account"
+                android:visibility="gone"
+                style="@style/style_profile_et"/>
+            <EditText
+                android:id="@+id/et_AliPay"
+                android:visibility="gone"
+                style="@style/style_profile_et"/>
+            <EditText
+                android:id="@+id/et_nickName"
+                android:visibility="gone"
+                style="@style/style_profile_et"/>
+        </FrameLayout>
         <ImageView
             android:id="@+id/iv_clean_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ease_search_clear_pressed"
+            android:src="@drawable/clean"
             style="@style/style_widthW_heightW"/>
     </RelativeLayout>
 

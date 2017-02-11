@@ -18,6 +18,7 @@ public class EditTextUtil {
         mListener = listener;
     }
 
+    //获取输入内容的长度 回调给界面显示
     public void change(final EditText editText){
         editText.addTextChangedListener(new TextWatcher() {
             @Override

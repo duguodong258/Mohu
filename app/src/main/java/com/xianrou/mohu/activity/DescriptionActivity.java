@@ -2,6 +2,7 @@ package com.xianrou.mohu.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -18,7 +19,7 @@ import com.xianrou.mohu.util.EditTextUtil;
  * @des 视频、相册描述详情页
  */
 
-public class DescriptionActivity extends BaseActivity implements EditTextUtil.IEditTextChangeListener {
+public class DescriptionActivity extends BaseActivity implements EditTextUtil.IEditTextChangeListener, View.OnClickListener {
 
     private LinearLayout llRoot;//根布局
     private RelativeLayout layoutTitle;
@@ -55,6 +56,7 @@ public class DescriptionActivity extends BaseActivity implements EditTextUtil.IE
         tvDesWordNumber = (TextView) findViewById(R.id.tv_des_wordNumber);
         etInputTitle = (EditText) findViewById(R.id.et_input_title);
         etInputDes = (EditText) findViewById(R.id.et_input_des);
+        llBackLayout.setOnClickListener(this);
         EditTextUtil editTextUtil = new EditTextUtil();
         editTextUtil.setListener(this);
         editTextUtil.change(etInputTitle);
@@ -79,6 +81,18 @@ public class DescriptionActivity extends BaseActivity implements EditTextUtil.IE
                 tvTitleWordNumber.setText(length+"/20");
         }else if(editText == etInputDes){//描述的et监听
                 tvDesWordNumber.setText(length+"/50");
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ll_backLayout :
+                finish();
+                break;
+            case R.id.tvRightText :
+
+                break;
         }
     }
 }

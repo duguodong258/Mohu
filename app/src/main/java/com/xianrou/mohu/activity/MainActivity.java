@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.xianrou.mohu.AppConfig;
 import com.xianrou.mohu.R;
-import com.xianrou.mohu.activity.personalprofile.PersonalProfileActivity;
+import com.xianrou.mohu.activity.personalProfile.PersonalProfileActivity;
 import com.xianrou.mohu.base.AppManager;
 import com.xianrou.mohu.base.BaseActivity;
 import com.xianrou.mohu.util.ActivityUtil;

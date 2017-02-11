@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/edit_bg"
+              style="@style/style_widthM_heightM">
+    <include layout="@layout/layout_title"/>
+
+    <EditText
+        android:layout_marginTop="@dimen/Spacing_10dp"
+        android:id="@+id/et_input_blurb"
+        android:gravity="start"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Spacing_80dp"/>
+</LinearLayout>
