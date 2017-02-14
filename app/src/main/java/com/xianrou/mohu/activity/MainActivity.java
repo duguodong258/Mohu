@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.xianrou.mohu.AppConfig;
 import com.xianrou.mohu.R;
@@ -35,40 +35,41 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private void initView() {
         root_view = (LinearLayout) findViewById(R.id.activity_main);
-        TextView tvPublish = (TextView) findViewById(R.id.tv_publish);
-        TextView tvHome = (TextView) findViewById(R.id.tv_home);
-        TextView tvMyReward = (TextView) findViewById(R.id.tv_my_reward);
-        TextView tvMyShare = (TextView) findViewById(R.id.tv_my_share);
-        TextView tvMine = (TextView) findViewById(R.id.tv_mine);
-        TextView tvCode = (TextView) findViewById(R.id.tv_code);
 
-        tvPublish.setOnClickListener(this);
-        tvHome.setOnClickListener(this);
-        tvMyReward.setOnClickListener(this);
-        tvMyShare.setOnClickListener(this);
-        tvMine.setOnClickListener(this);
-        tvCode.setOnClickListener(this);
+        ImageView ivPublish = (ImageView) findViewById(R.id.iv_publish);
+        ImageView ivHot = (ImageView) findViewById(R.id.iv_hot);
+        ImageView ivReward = (ImageView) findViewById(R.id.iv_reward);
+        ImageView ivShare = (ImageView) findViewById(R.id.iv_share);
+        ImageView ivMine = (ImageView) findViewById(R.id.iv_mine);
+        ImageView ivUnlocked = (ImageView) findViewById(R.id.iv_unlocked);
+
+        ivPublish.setOnClickListener(this);
+        ivHot.setOnClickListener(this);
+        ivReward.setOnClickListener(this);
+        ivShare.setOnClickListener(this);
+        ivMine.setOnClickListener(this);
+        ivUnlocked.setOnClickListener(this);
     }
 
 
     public void onClick(View view){
         switch (view.getId()) {
-            case R.id.tv_publish ://发布 弹出选择的popupwindow
+            case R.id.iv_publish ://发布 弹出选择的popupwindow
                 showPop();
                 break;
-            case R.id.tv_home ://首页 跳到home_activity 直接显示首页fragment
+            case R.id.iv_hot ://热门 跳到home_activity 直接显示热门fragment
                 ActivityUtil.startActivity(this,HomeActivity.class);
                 break;
-            case R.id.tv_my_reward ://我的打赏 跳到home_activity 直接显示我的打赏fragment
+            case R.id.iv_reward ://打赏 跳到home_activity 直接显示我的打赏fragment
                 ActivityUtil.startActivity(this,HomeActivity.class);
                 break;
-            case R.id.tv_my_share ://我的分享  跳到home_activity 直接显示我的分享fragment
+            case R.id.iv_share ://分享  跳到home_activity 直接显示我的分享fragment
                 ActivityUtil.startActivity(this,HomeActivity.class);
                 break;
-            case R.id.tv_mine ://我的  跳到home_activity 直接显示我的资料fragment
+            case R.id.iv_mine ://我的  跳到home_activity 直接显示我的资料fragment
                 ActivityUtil.startActivity(this,HomeActivity.class);
                 break;
-            case R.id.tv_code ://标识码
+            case R.id.iv_unlocked ://解封码
                 ActivityUtil.startActivity(this,PersonalProfileActivity.class);
                 break;
             case R.id.btn_firstItem://发布相册
@@ -89,6 +90,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mPopupWindow.setSecondItemName("发布视频");
         mPopupWindow.showAtLocation(root_view, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL,0,0);
     }
+
+
+
 
 
     private long lastClickTime = 0;

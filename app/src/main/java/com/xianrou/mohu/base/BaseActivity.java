@@ -3,7 +3,8 @@ package com.xianrou.mohu.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import com.zhy.autolayout.AutoLayoutActivity;
 
 /**
  * @author 咸鱼
@@ -11,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
  * @des ${TODO}
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AutoLayoutActivity {
     protected Context mContext;
 
     @Override

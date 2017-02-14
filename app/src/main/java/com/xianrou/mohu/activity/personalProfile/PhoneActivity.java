@@ -51,6 +51,7 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
         llRightLayout.setOnClickListener(this);
         btnGetCode.setOnClickListener(this);
         btnGetCode.setEditText(etPhoneNumber);
+        titleCenter.setText("绑定手机号");
     }
 
     @Override
@@ -71,7 +72,7 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
     private void checkPhoneNumber() {
         String phoneNumber = etPhoneNumber.getText().toString();
         if(btnGetCode.isMobleNO(phoneNumber)){
-            /**如果手机格式正确 网络请求发送验证码**/
+            /**如果手机格式正确 网络请求获取验证码**/
         }
     }
 

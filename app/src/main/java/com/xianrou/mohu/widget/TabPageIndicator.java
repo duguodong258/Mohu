@@ -42,7 +42,7 @@ public class TabPageIndicator extends HorizontalScrollView implements ViewPager.
     }
 
     private int mSelectTextColor = Color.BLUE;
-    private int mTextSize = 16;
+    private int mTextSize = 28;
 
     private int mCurrentPosition;
     private int mSelectPosition;
@@ -51,7 +51,7 @@ public class TabPageIndicator extends HorizontalScrollView implements ViewPager.
     private float mOffset;
 
     private Paint mSelectLinePaint;
-    private int mLineColor= getResources().getColor(R.color.indicator_tvColor_selected);
+    private int mLineColor= getResources().getColor(R.color.tab_tvColor_selected);
     private int mLineHeight=5;
 
     private LinearLayout mLinearLayout;

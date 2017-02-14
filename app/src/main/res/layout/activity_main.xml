@@ -4,48 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="@drawable/home_cell_bg"
     style="@style/style_widthM_heightM"
     tools:context="com.xianrou.mohu.activity.MainActivity">
 
     <LinearLayout
-        style="@style/style_ll_home">
-        <TextView
-            android:id="@+id/tv_publish"
-            style="@style/style_tv_home"
-            android:text="@string/publish"
-            android:background="@drawable/zs"/>
-        <TextView
-            android:id="@+id/tv_home"
-            style="@style/style_tv_home"
-            android:text="@string/home"
-            android:background="@drawable/zs1"/>
-    </LinearLayout>
+        android:orientation="vertical"
+        style="@style/style_widthM_heightW">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            style="@style/style_widthM_heightW">
+            <ImageView
+                android:id="@+id/iv_publish"
+                android:src="@drawable/home_publish_btn_nor"
+                style="@style/style_iv_home"/>
+            <ImageView
+                android:id="@+id/iv_hot"
+                android:src="@drawable/home_home_btn_nor"
+                style="@style/style_iv_home"/>
+            <ImageView
+                android:id="@+id/iv_reward"
+                android:src="@drawable/home_reward_btn_nor"
+                style="@style/style_iv_home"/>
+        </LinearLayout>
 
-    <LinearLayout
-        style="@style/style_ll_home">
-        <TextView
-            android:id="@+id/tv_my_reward"
-            style="@style/style_tv_home"
-            android:text="@string/my_reward"
-            android:background="@drawable/zs1"/>
-        <TextView
-            android:id="@+id/tv_my_share"
-            style="@style/style_tv_home"
-            android:text="@string/my_share"
-            android:background="@drawable/zs2"/>
-    </LinearLayout>
 
-    <LinearLayout
-        style="@style/style_ll_home">
-        <TextView
-            android:id="@+id/tv_mine"
-            style="@style/style_tv_home"
-            android:text="@string/mine"
-            android:background="@drawable/zs2"/>
-        <TextView
-            android:id="@+id/tv_code"
-            style="@style/style_tv_home"
-            android:text="@string/code"
-            android:background="@drawable/zs"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            style="@style/style_widthM_heightW">
+            <ImageView
+                android:id="@+id/iv_share"
+                android:src="@drawable/home_album_btn_nor"
+                style="@style/style_iv_home"/>
+            <ImageView
+                android:id="@+id/iv_mine"
+                android:src="@drawable/home_user_btn_nor"
+                style="@style/style_iv_home"/>
+            <ImageView
+                android:id="@+id/iv_unlocked"
+                android:src="@drawable/home_unlocked_btn_nor"
+                style="@style/style_iv_home"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

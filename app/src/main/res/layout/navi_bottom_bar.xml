@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/style_widthM_heightM"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/tab_home"
+        style="@style/style_tab_ll">
+        <ImageView
+            style="@style/style_tab_img"
+            android:src="@drawable/selector_tab_home" />
+        <TextView
+            android:text="@string/home"
+            style="@style/style_tab_Text"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/tab_find"
+        style="@style/style_tab_ll">
+        <ImageView
+            style="@style/style_tab_img"
+            android:src="@drawable/selector_tab_find" />
+        <TextView
+            android:text="@string/find"
+            style="@style/style_tab_Text"/>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/tab_publish"
+        android:layout_width="1dp"
+        android:layout_height="@dimen/icon_size_large"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:src="@drawable/tabbar_publish_nor"/>
+
+    <LinearLayout
+        android:id="@+id/tab_me"
+        style="@style/style_tab_ll">
+        <ImageView
+            style="@style/style_tab_img"
+            android:src="@drawable/selector_tab_me" />
+        <TextView
+            android:text="@string/mine"
+            style="@style/style_tab_Text"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/tab_easy"
+        style="@style/style_tab_ll">
+        <ImageView
+            style="@style/style_tab_img"
+            android:src="@drawable/selector_tab_easy" />
+        <TextView
+            android:text="@string/find"
+            style="@style/style_tab_Text"/>
+    </LinearLayout>
+
+
+</LinearLayout>

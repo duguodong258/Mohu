@@ -14,17 +14,17 @@ import com.xianrou.mohu.R;
 import com.xianrou.mohu.base.BaseFragment;
 import com.xianrou.mohu.util.DeviceUtil;
 import com.xianrou.mohu.widget.TabPageIndicator;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.xianrou.mohu.R.id.indicator;
 import static com.xianrou.mohu.R.id.vp;
 
 /**
  * @author 咸鱼
  * @date 2017/1/19
- * @des ${TODO}
+ * @des 首页
  */
 
 public class HomeFragment extends BaseFragment {
@@ -33,6 +33,13 @@ public class HomeFragment extends BaseFragment {
     private TabPageIndicator mIndicator;
     private ViewPager mViewPager;
     private ArrayList<Fragment> mFragments;
+
+    private static HomeFragment instance;
+    public static synchronized HomeFragment getInstance() {
+        if(instance==null)
+            instance = new HomeFragment();
+        return instance;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,12 +61,12 @@ public class HomeFragment extends BaseFragment {
         mFragments = new ArrayList<>();
         mFragments.add(recommendFragment);
         mFragments.add(hotFragment);
-        mIndicator = (TabPageIndicator) mView.findViewById(indicator);
+        mIndicator = (TabPageIndicator) mView.findViewById(R.id.indicator);
         int screenWidth = DeviceUtil.getScreenWidth(getActivity());
         mIndicator.setTextColor(getResources().getColor(R.color.indicator_tvColor));
-        mIndicator.setSelectTextColor(getResources().getColor(R.color.indicator_tvColor_selected));
-        mIndicator.setTextSize(screenWidth/22);
-        mIndicator.setTabPadding(screenWidth/22);
+        mIndicator.setSelectTextColor(getResources().getColor(R.color.tab_tvColor_selected));
+        mIndicator.setTextSize(AutoUtils.getPercentWidthSize(28));
+        mIndicator.setTabPadding((int)getResources().getDimension(R.dimen.Spacing_6dp));
         mViewPager = (ViewPager) mView.findViewById(vp);
         mViewPager.setAdapter(new MyAdapter(getChildFragmentManager(),mFragments));
         mIndicator.setViewPager(mViewPager);

@@ -1,42 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+                android:id="@+id/rl_root"
               style="@style/style_widthM_heightM">
 
 
-    <RadioGroup
-        android:id="@+id/radioGroup_bottom"
-        android:orientation="horizontal"
+    <com.xianrou.mohu.widget.NaviBottomBar
+        android:id="@+id/navi_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        style="@style/style_widthM_heightW">
-        <RadioButton
-            android:id="@+id/rb_home"
-            style="@style/style_RadioButton"
-            android:text="@string/home"/>
-        <RadioButton
-            android:id="@+id/rb_find"
-            style="@style/style_RadioButton"
-            android:text="@string/discover"/>
-        <RadioButton
-            android:id="@+id/rb_publish"
-            style="@style/style_RadioButton"
-            android:text="@string/publish"/>
-
-        <RadioButton
-            android:id="@+id/rb_mine"
-            style="@style/style_RadioButton"
-            android:text="@string/mine"/>
-        <RadioButton
-            android:id="@+id/rb_easy"
-            style="@style/style_RadioButton"
-            android:text="@string/easy"/>
-    </RadioGroup>
+        android:background="@color/white" />
 
     <LinearLayout
         android:id="@+id/ll_fg_container"
         android:orientation="vertical"
-        android:layout_above="@id/radioGroup_bottom"
+        android:layout_above="@id/navi_bottom_bar"
         android:gravity="center"
         style="@style/style_widthM_heightM">
     </LinearLayout>
+
 </RelativeLayout>

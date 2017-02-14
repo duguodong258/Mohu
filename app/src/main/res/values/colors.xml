@@ -16,7 +16,8 @@
     <color name="publish_bg">#F3F3F3</color>
     <color name="blank_light">#333333</color>
     <color name="line_color">#E1E1E1</color>
-    <color name="radio_tvColor">#DA3A8E</color>
+    <color name="tab_tvColor_selected">#E5517C</color>
+    <color name="tab_tvColor_normal">#999999</color>
     <color name="indicator_tvColor">#AEAEC3</color>
     <color name="indicator_tvColor_selected">#3399FF</color>
     <color name="publish_photo_bg">#444444</color>

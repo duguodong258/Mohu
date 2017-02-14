@@ -12,10 +12,18 @@ import com.xianrou.mohu.base.BaseFragment;
 /**
  * @author 咸鱼
  * @date 2017/1/19
- * @des ${TODO}
+ * @des 发现
  */
 
 public class FindFragment extends BaseFragment {
+
+    private static FindFragment instance;
+    public static synchronized FindFragment getInstance() {
+        if(instance==null)
+            instance = new FindFragment();
+        return instance;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

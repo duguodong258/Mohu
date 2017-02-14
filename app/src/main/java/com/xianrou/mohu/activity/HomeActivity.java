@@ -5,9 +5,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 
 import com.xianrou.mohu.AppConfig;
 import com.xianrou.mohu.R;
@@ -15,8 +16,9 @@ import com.xianrou.mohu.base.BaseActivity;
 import com.xianrou.mohu.fragment.FindFragment;
 import com.xianrou.mohu.fragment.HomeFragment;
 import com.xianrou.mohu.fragment.MineFragment;
-import com.xianrou.mohu.fragment.PublishFragment;
 import com.xianrou.mohu.util.ActivityUtil;
+import com.xianrou.mohu.widget.BottomPopupWindow;
+import com.xianrou.mohu.widget.NaviBottomBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,78 +29,74 @@ import java.util.List;
  * @des ${TODO}
  */
 
-public class HomeActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
+public class HomeActivity extends BaseActivity implements NaviBottomBar.OnTabClickListener, View.OnClickListener {
 
     private LinearLayout llFgContainer;
-    private RadioGroup radioGroupBottom;
-    private RadioButton rbHome;
-    private RadioButton rbFind;
-    private RadioButton rbPublish;
-    private RadioButton rbMine;
-    private RadioButton rbEasy;
     private List<Fragment> mFragmentList;
+    public NaviBottomBar mBottomBar;
+    private HomeFragment mHomeFragment;
+    private FindFragment mFindFragment;
+    private MineFragment mMineFragment;
+    private BottomPopupWindow mPopupWindow;
+    private RelativeLayout rlRoot;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         initView();
         initFragment();
     }
 
     private void initView() {
+        rlRoot = (RelativeLayout) findViewById(R.id.rl_root);
         llFgContainer = (LinearLayout) findViewById(R.id.ll_fg_container);
-        radioGroupBottom = (RadioGroup) findViewById(R.id.radioGroup_bottom);
-        rbHome = (RadioButton) findViewById(R.id.rb_home);
-        rbFind = (RadioButton) findViewById(R.id.rb_find);
-        rbPublish = (RadioButton) findViewById(R.id.rb_publish);
-        rbMine = (RadioButton) findViewById(R.id.rb_mine);
-        rbEasy = (RadioButton) findViewById(R.id.rb_easy);
-        radioGroupBottom.setOnCheckedChangeListener(this);
+        mBottomBar = (NaviBottomBar) findViewById(R.id.navi_bottom_bar);
+        mBottomBar.setOnTabClickListener(this);
     }
 
     private void initFragment() {
         mFragmentList = new ArrayList<>();
-        HomeFragment homeFragment = new HomeFragment();
-        FindFragment findFragment = new FindFragment();
-        PublishFragment publishFragment = new PublishFragment();
-        MineFragment mineFragment = new MineFragment();
-        mFragmentList.add(homeFragment);
-        mFragmentList.add(findFragment);
-        mFragmentList.add(publishFragment);
-        mFragmentList.add(mineFragment);
+        mHomeFragment = HomeFragment.getInstance();
+        mFindFragment = FindFragment.getInstance();
+        mMineFragment = MineFragment.getInstance();
+        mFragmentList.add(mHomeFragment);
+        mFragmentList.add(mFindFragment);
+        mFragmentList.add(mMineFragment);
         //默认显示首页
-        change(AppConfig.FRAGMENT_HOME);
-    }
-    @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-        switch (checkedId) {
-            case R.id.rb_home :
-                change(AppConfig.FRAGMENT_HOME);
-                break;
-            case R.id.rb_find :
-                change(AppConfig.FRAGMENT_FIND);
-                break;
-            case R.id.rb_publish :
-                change(AppConfig.FRAGMENT_PUBLISH);
-                break;
-            case R.id.rb_mine :
-                change(AppConfig.FRAGMENT_MINE);
-                break;
-            case R.id.rb_easy :
-                ActivityUtil.startActivity(this,MainActivity.class,true);
-                break;
-        }
+        replace(mHomeFragment);
+        mBottomBar.setHomeSelected();
     }
 
-    private void change(int position) {
-        for(int i = 0; i < radioGroupBottom.getChildCount(); i++) {
-            RadioButton radioButton = (RadioButton) radioGroupBottom.getChildAt(i);
-            radioButton.setSelected(false);
-        }
-        ((RadioButton) radioGroupBottom.getChildAt(position)).setSelected(true);
-        replace(mFragmentList.get(position));
+
+
+    @Override
+    public void onHomeClick() {
+        replace(mHomeFragment);
+        mBottomBar.setHomeSelected();
+    }
+
+    @Override
+    public void onFindClick() {
+        replace(mFindFragment);
+        mBottomBar.setFindSelcted();
+    }
+
+    @Override
+    public void onPublishClick() {
+        showPop();
+    }
+
+    @Override
+    public void onMeClick() {
+        replace(mMineFragment);
+        mBottomBar.setMeSelcted();
+    }
+
+    @Override
+    public void onEasyClick() {
+        ActivityUtil.startActivity(this,MainActivity.class,true);
     }
 
 
@@ -107,5 +105,26 @@ public class HomeActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.ll_fg_container,f);
         transaction.commitAllowingStateLoss();
+    }
+
+    private void showPop() {
+        mPopupWindow = new BottomPopupWindow(mContext, this);
+        mPopupWindow.setFirstItemName("发布相册");
+        mPopupWindow.setSecondItemName("发布视频");
+        mPopupWindow.showAtLocation(rlRoot, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL,0,0);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_firstItem://发布相册
+                mPopupWindow.dismiss();
+                ActivityUtil.startActivity(this,PublishPhotoActivity.class, AppConfig.PUBLISH_PHOTO);
+                break;
+            case R.id.btn_secondItem://发布视频
+                mPopupWindow.dismiss();
+                ActivityUtil.startActivity(this,PublishVideoActivity.class,AppConfig.PUBLISH_VIDEO);
+                break;
+        }
     }
 }

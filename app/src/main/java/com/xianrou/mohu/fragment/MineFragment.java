@@ -12,10 +12,18 @@ import com.xianrou.mohu.base.BaseFragment;
 /**
  * @author 咸鱼
  * @date 2017/1/19
- * @des ${TODO}
+ * @des 我
  */
 
 public class MineFragment extends BaseFragment {
+
+    private static MineFragment instance;
+    public static synchronized MineFragment getInstance() {
+        if(instance==null)
+            instance = new MineFragment();
+        return instance;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
