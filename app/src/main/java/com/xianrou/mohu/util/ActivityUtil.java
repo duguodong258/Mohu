@@ -34,7 +34,7 @@ public class ActivityUtil {
         Intent intent = new Intent(activity,clz);
         intent.putExtra("flag",flag);
         activity.startActivity(intent);
-        activity.overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+        activity.overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     //是否关闭自己的跳转

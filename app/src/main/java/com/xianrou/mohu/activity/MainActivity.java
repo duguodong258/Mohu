@@ -9,9 +9,9 @@ import android.widget.LinearLayout;
 
 import com.xianrou.mohu.AppConfig;
 import com.xianrou.mohu.R;
-import com.xianrou.mohu.activity.personalProfile.PersonalProfileActivity;
 import com.xianrou.mohu.base.AppManager;
 import com.xianrou.mohu.base.BaseActivity;
+import com.xianrou.mohu.base.MohuApplication;
 import com.xianrou.mohu.util.ActivityUtil;
 import com.xianrou.mohu.util.ToastUtil;
 import com.xianrou.mohu.widget.BottomPopupWindow;
@@ -55,6 +55,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View view){
         switch (view.getId()) {
             case R.id.iv_publish ://发布 弹出选择的popupwindow
+                if(!MohuApplication.getsInstance().isLogin()){
+                    ActivityUtil.startActivity(this,LoginActivity.class);
+                    return;
+                }
                 showPop();
                 break;
             case R.id.iv_hot ://热门 跳到home_activity 直接显示热门fragment
@@ -70,7 +74,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 ActivityUtil.startActivity(this,HomeActivity.class);
                 break;
             case R.id.iv_unlocked ://解封码
-                ActivityUtil.startActivity(this,PersonalProfileActivity.class);
+                ActivityUtil.startActivity(this,CodeActivity.class);
                 break;
             case R.id.btn_firstItem://发布相册
                 mPopupWindow.dismiss();

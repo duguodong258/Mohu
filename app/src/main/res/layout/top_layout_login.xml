@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rl_top"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/top_layout_height">
+        <RelativeLayout
+            android:id="@+id/rl_close"
+            android:gravity="center"
+            android:layout_width="@dimen/Spacing_50dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/register_shutdown_nor"
+                style="@style/style_widthW_heightW"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_tab_right"
+            android:text="@string/login"
+            android:textSize="@dimen/top_layout_tv_size"
+            android:gravity="center"
+            android:textColor="@color/top_layout_tv_color"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/Spacing_50dp"
+            android:layout_height="match_parent" />
+</RelativeLayout>

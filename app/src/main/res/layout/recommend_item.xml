@@ -5,13 +5,16 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <android.support.v7.widget.CardView
-        android:id="@+id/cardview"
+        android:id="@+id/cardView"
         android:src="@mipmap/zs"
-        app:cardCornerRadius="@dimen/Spacing_5dp"
+        app:cardCornerRadius="@dimen/Spacing_10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="@dimen/Spacing_10dp"
-        android:paddingBottom="@dimen/Spacing_10dp">
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_img"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
         <TextView
             android:id="@+id/tv_name"
             style="@style/style_widthW_heightW"

@@ -72,6 +72,12 @@
         <item name="android:layout_marginRight">@dimen/Spacing_5dp</item>
     </style>
 
+    <style name="weight_width">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
     <style name="style_tab_Text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:id="@+id/ll_root"
+              android:gravity="center_horizontal"
+              style="@style/style_widthM_heightM">
+    <include layout="@layout/top_layout_login"/>
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="280px">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_avatar"
+            android:layout_gravity="center"
+            android:layout_height="154px"
+            android:layout_width="154px"
+            fresco:roundAsCircle="true"
+            fresco:placeholderImage="@drawable/default_user_icon"
+            fresco:actualImageScaleType="focusCrop"
+            fresco:failureImage="@drawable/default_user_icon"/>
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/et_input_account"
+        android:gravity="center"
+        android:background="@null"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/register_tel_nor"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="300dp"
+        android:layout_height="80px"
+        android:textSize="@dimen/input_tv_size"
+        android:textColorHint="@color/login_tvColorHint"
+        android:hint="@string/input_phoneNumber" />
+    <View
+        android:background="@color/login_tvColorHint"
+        android:layout_width="300dp"
+        android:layout_height="1dp"/>
+
+    <Button
+        android:id="@+id/btn_getCode"
+        android:gravity="center"
+        android:background="@drawable/shape_getcode_bg"
+        android:text="@string/get_phone_code"
+        android:textSize="@dimen/input_tv_size"
+        android:textColor="#fff"
+        android:layout_marginTop="108px"
+        android:layout_width="300dp"
+        android:layout_height="80px" />
+
+</LinearLayout>

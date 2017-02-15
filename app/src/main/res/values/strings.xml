@@ -19,13 +19,25 @@
     <string name="find">发现</string>
     <string name="easy">轻巧</string>
     <string name="register">注册</string>
+    <string name="login">登录</string>
     <string name="input_phoneNumber">请输入手机号码</string>
+    <string name="input_account">请输入账号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="input_code">请输入验证码</string>
+    <string name="input_shiBie_id">请输入识别码</string>
+    <string name="set_password">设置密码后,可通过手机号登录</string>
+    <string name="input_password_again">请再次输入密码</string>
+    <string name="input_new_password">请输入新密码</string>
     <string name="get_phone_code">获取手机验证码</string>
     <string name="other_login">第三方登录</string>
+    <string name="sure_login">确定登录</string>
+    <string name="sure_register">确认注册</string>
+    <string name="sure">确定</string>
     <string name="exit_app">再按一次退出应用</string>
     <string name="personal_profile_title">个人资料</string>
     <string name="blurb">简介</string>
     <string name="please_get_sms_code">请先获取验证码</string>
     <string name="please_input_phoneNumber">请先输入手机号码</string>
+    <string name="send_code_finish">已发送短信验证码到</string>
 
 </resources>

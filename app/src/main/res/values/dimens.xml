@@ -8,9 +8,13 @@
     <dimen name="mis_folder_cover_size">72dp</dimen>
 
     <dimen name="tab_text_size">11sp</dimen>
+    <dimen name="top_layout_height">88px</dimen>
+    <dimen name="top_layout_tv_size">24px</dimen>
+    <dimen name="input_tv_size">28px</dimen>
+    <dimen name="bottom_bar_height">88px</dimen>
+
     <dimen name="horizental_spacing">1dp</dimen>
     <dimen name="vertical_spacing">2dp</dimen>
-    <dimen name="bottom_bar_height">88px</dimen>
     <dimen name="icon_size_small">24dp</dimen>
     <dimen name="icon_size_large">38dp</dimen>
     <dimen name="icon_margin_top">3dp</dimen>

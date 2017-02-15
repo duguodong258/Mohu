@@ -2,76 +2,129 @@ package com.xianrou.mohu.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.DisplayMetrics;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.xianrou.mohu.R;
 import com.xianrou.mohu.base.BaseActivity;
-import com.xianrou.mohu.fragment.TestFragment;
-import com.xianrou.mohu.widget.TabPageIndicator;
+import com.xianrou.mohu.bean.RecommendEntity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author 咸鱼
  * @date 2017/1/14
- * @des 标识码
+ * @des 解封码
  */
 
-public class CodeActivity extends BaseActivity {
-    private String[] titles={"上衣","裤子","衬衫","鞋子","外衣","背包","箱子","皮鞋","牛仔","鞋子","外衣","背包","箱子","皮鞋","牛仔"};
+public class CodeActivity extends BaseActivity implements View.OnClickListener, XRecyclerView.LoadingListener {
 
-    private ViewPager mViewPager;
-    private TabPageIndicator mIndicator;
-    private int mScreenWidth;
+    private EditText etInputId;//输入识别码的edit
+    private XRecyclerView mRecyclerView;
+    private List<RecommendEntity> mDatas;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code);
-        initData();
         initView();
-        updateUI();
-    }
+        getData();
 
-    private void initData() {
-        DisplayMetrics metrics=new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        mScreenWidth=metrics.widthPixels;
     }
 
     private void initView() {
-        mViewPager= (ViewPager) findViewById(R.id.vp);
-        mIndicator= (TabPageIndicator) findViewById(R.id.indicator);
-        mIndicator.setTextSize(mScreenWidth/22);
-        mIndicator.setTabPadding(mScreenWidth/22);
+        mRecyclerView = (XRecyclerView) findViewById(R.id.recycleView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false);
+        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setLoadingListener(this);
+        mRecyclerView.setAdapter(new RecycleViewAdapter());
+        TextView titleCenter = (TextView) findViewById(R.id.title_center);
+        etInputId = (EditText) findViewById(R.id.et_input_id);
+        findViewById(R.id.ll_rightLayout).setOnClickListener(this);
+        findViewById(R.id.ll_backLayout).setOnClickListener(this);
+        findViewById(R.id.iv_clean_content).setOnClickListener(this);
+        titleCenter.setText("解封码");
     }
 
-    private void updateUI() {
-        mViewPager.setAdapter(new TestAdapter(getSupportFragmentManager()));
-        mIndicator.setViewPager(mViewPager);
+
+    private void getData() {
+        mDatas = new ArrayList<>();
+        for(int i = 0; i < 20; i++) {
+            RecommendEntity entity = new RecommendEntity(R.drawable.zs2,"郑爽 "+i);
+            mDatas.add(entity);
+        }
+        RecycleViewAdapter adapter = new RecycleViewAdapter();
+        mRecyclerView.setAdapter(adapter);
     }
 
-    public class TestAdapter extends FragmentPagerAdapter {
 
-        public TestAdapter(FragmentManager fm) {
-            super(fm);
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ll_backLayout ://返回
+                finish();
+                break;
+            case R.id.ll_rightLayout ://确定
+
+                break;
+            case R.id.iv_clean_content ://清除
+                etInputId.setText("");
+                break;
+        }
+    }
+
+    @Override
+    public void onRefresh() {
+
+    }
+
+    @Override
+    public void onLoadMore() {
+
+    }
+
+
+
+
+
+    public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewHolder>{
+
+        @Override
+        public RecycleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_code_rv_item, null);
+            return new RecycleViewHolder(view);
         }
 
         @Override
-        public Fragment getItem(int position) {
-            return TestFragment.newPage(position);
+        public void onBindViewHolder(RecycleViewHolder holder, int position) {
+            RecommendEntity entity = mDatas.get(position);
+//            holder.mIvImg.setImageResource(entity.getImg());
+//            holder.mTvName.setText(entity.getName());
         }
 
         @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
+        public int getItemCount() {
+            return mDatas.size();
         }
+    }
 
-        @Override
-        public int getCount() {
-            return titles.length;
+
+    class RecycleViewHolder extends RecyclerView.ViewHolder{
+
+//        private final TextView mTvName;
+//        private final ImageView mIvImg;
+
+        public RecycleViewHolder(View itemView) {
+            super(itemView);
+//            mTvName = (TextView) itemView.findViewById(R.id.tv_name);
+//            mIvImg = (ImageView) itemView.findViewById(R.id.iv_img);
         }
     }
 }

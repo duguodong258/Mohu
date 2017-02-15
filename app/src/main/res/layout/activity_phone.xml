@@ -34,6 +34,4 @@
             android:background="@drawable/btn_getcode"/>
     </RelativeLayout>
 
-
-
 </LinearLayout>

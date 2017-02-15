@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:id="@+id/ll_root"
+              android:gravity="center_horizontal"
+              style="@style/style_widthM_heightM">
+    <include layout="@layout/top_layout_login"/>
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="280px">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_avatar"
+            android:layout_gravity="center"
+            android:layout_height="154px"
+            android:layout_width="154px"
+            fresco:roundAsCircle="true"
+            fresco:placeholderImage="@drawable/default_user_icon"
+            fresco:actualImageScaleType="focusCrop"
+            fresco:failureImage="@drawable/default_user_icon"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/Spacing_300dp"
+        android:layout_height="80px">
+        <EditText
+            android:id="@+id/et_input_account"
+            android:background="@null"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center_horizontal"
+            style="@style/style_widthM_heightM"
+            android:textSize="@dimen/input_tv_size"
+            android:textColorHint="@color/login_tvColorHint"
+            android:hint="@string/input_account" />
+        <ImageView
+            android:id="@+id/iv_see_more_account"
+            android:layout_marginRight="@dimen/Spacing_5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/register_unfold_nor"
+            style="@style/style_widthW_heightW"/>
+    </RelativeLayout>
+    <include layout="@layout/edit_bottom_line"/>
+
+    <RelativeLayout
+        android:layout_width="@dimen/Spacing_300dp"
+        android:layout_height="80px">
+        <EditText
+            android:id="@+id/et_input_password"
+            android:background="@null"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center_horizontal"
+            style="@style/style_widthM_heightM"
+            android:textSize="@dimen/input_tv_size"
+            android:textColorHint="@color/login_tvColorHint"
+            android:hint="@string/input_password" />
+        <ImageView
+            android:id="@+id/iv_see_password"
+            android:layout_marginRight="@dimen/Spacing_5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/register_watched_nor"
+            style="@style/style_widthW_heightW"/>
+    </RelativeLayout>
+
+    <include layout="@layout/edit_bottom_line"/>
+
+    <Button
+        android:id="@+id/btn_sure_Login"
+        android:gravity="center"
+        android:background="@drawable/shape_getcode_bg"
+        android:text="@string/sure_login"
+        android:textSize="@dimen/input_tv_size"
+        android:textColor="@color/white"
+        android:layout_marginTop="72px"
+        android:layout_width="300dp"
+        android:layout_height="80px" />
+    <RelativeLayout
+        android:layout_width="@dimen/Spacing_300dp"
+        android:layout_height="80px">
+
+        <TextView
+            android:id="@+id/tv_forget_password"
+            style="@style/style_widthW_heightM"
+            android:textSize="24px"
+            android:gravity="center_vertical"
+            android:textColor="@color/tab_tvColor_selected"
+            android:text="忘记密码"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

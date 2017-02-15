@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
-              android:gravity="center"
+              android:background="@color/edit_bg"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
-        android:text="标识码 activity"
-        android:textSize="30sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <com.xianrou.mohu.widget.TabPageIndicator
-        android:id="@+id/indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"/>
+    <include layout="@layout/layout_title"/>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp"
+    <RelativeLayout
+        android:background="@color/code_et_bg"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:paddingLeft="@dimen/Spacing_5dp"
+        android:paddingRight="@dimen/Spacing_5dp"
+        android:layout_height="90px">
+        <EditText
+            android:id="@+id/et_input_id"
+            android:background="@drawable/shape_code_et_bg"
+            android:layout_centerVertical="true"
+            android:paddingLeft="40px"
+            android:drawablePadding="30px"
+            android:textSize="28px"
+            android:drawableLeft="@drawable/search_unlock_nor"
+            android:hint="@string/input_shiBie_id"
+            android:layout_width="match_parent"
+            android:layout_height="64px"/>
+        <ImageView
+            android:id="@+id/iv_clean_content"
+            android:layout_alignRight="@id/et_input_id"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/clean"
+            style="@style/style_widthW_heightW"/>
+    </RelativeLayout>
 
+    <TextView
+        android:text="更多推荐"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="10px"
+        style="@style/style_widthW_heightW"/>
 
-    </android.support.v4.view.ViewPager>
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/recycleView"
+        android:layout_marginTop="30px"
+        style="@style/style_widthM_heightW"/>
 </LinearLayout>

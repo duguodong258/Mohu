@@ -22,7 +22,7 @@
                 style="@style/style_iv_home"/>
             <ImageView
                 android:id="@+id/iv_hot"
-                android:src="@drawable/home_home_btn_nor"
+                android:src="@drawable/home_hot_btn_nor"
                 style="@style/style_iv_home"/>
             <ImageView
                 android:id="@+id/iv_reward"
@@ -37,7 +37,7 @@
             style="@style/style_widthM_heightW">
             <ImageView
                 android:id="@+id/iv_share"
-                android:src="@drawable/home_album_btn_nor"
+                android:src="@drawable/home_share_btn_nor"
                 style="@style/style_iv_home"/>
             <ImageView
                 android:id="@+id/iv_mine"
